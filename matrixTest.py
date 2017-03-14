@@ -22,7 +22,7 @@ def xyAbstract(matrix,x,y,value):
     matrix[y][x] = value
     return newMatrix
 
-def controls(val):
+def controlListener(val):
     action = ''
     if val == "w":
         action = "up"
@@ -34,14 +34,34 @@ def controls(val):
         action = "right"
     return action
 
-def objAction(val):
-    if val = 
+def objAction(obj,act):
+    xUpdate = 0
+    yUpdate = 0
+    if act == "up":
+        yUpdate = 1
+    elif act == "down":
+        yUpdate = -1
+    elif act == "left":
+        xUpdate = -1
+    elif act == "right":
+        xUpdate = 1
+
+    obj["x"] += xUpdate
+    obj["y"] += yUpdate
+    return obj
+
+'''
+def spacialExecution(val,matrix):
+    if val = "up":
+'''
+
+obj = {"x":0,"y":0}
 
 #pretty(plane)
-plane = xyAbstract(plane,4,4,"Hey!")
-pretty(plane)
+#plane = xyAbstract(plane,4,4,"Hey!")
+#pretty(plane)
 
-running = True
+running = True #main loop control
 
 opt = input("Enter a character: ")
 print(opt)
