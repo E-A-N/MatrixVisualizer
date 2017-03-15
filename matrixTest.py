@@ -1,5 +1,5 @@
 #constants
-num = 6
+globalXY = 6
 
 def cleanMatrix(num):
     '''
@@ -13,7 +13,7 @@ def cleanMatrix(num):
           mat[y][x] = 0
     return mat
 
-plane = cleanMatrix(num)
+plane = cleanMatrix(globalXY)
 
 def pretty(matrix):
     '''
@@ -55,7 +55,7 @@ def controlListener(val):
         action = "right"
     return action
 
-def objAction(obj,act):
+def objAction(obj,act,boundary = globalXY):
     '''
     This function enables objects to exectue an action
     :type obj: dict
@@ -63,9 +63,11 @@ def objAction(obj,act):
     :type act: string
     :param act: action for object to execute
     '''
+    topBound = (boundary - 1) * -1
+    xBound = boundary - 1
     xUpdate = 0
     yUpdate = 0
-    if act == "up":
+    if ((act == "up") and (obj["y"] < topBound)):
         yUpdate = -1
     elif act == "down":
         yUpdate = 1
@@ -85,7 +87,7 @@ posUpdate(plane,obj)
 while running:
   pretty(plane)
   print("\n\n")
-  plane = cleanMatrix(num)
+  plane = cleanMatrix(globalXY)
   opt = input("WASD to move: ")
   print(opt) #debugging
   for i in "wasd":
