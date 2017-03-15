@@ -12,12 +12,9 @@ def cleanMatrix(num):
 
 plane = cleanMatrix(num)
 
-
 def pretty(matrix):
     for i in matrix:
       print(i)
-
-pretty(plane)
 
 def xyAbstract(matrix,x,y,value):
     newMatrix = matrix
@@ -25,7 +22,7 @@ def xyAbstract(matrix,x,y,value):
     #return newMatrix
     
 def posUpdate(matrix,obj):
-    pos = "XX"
+    pos = "X"
     x = obj["x"]
     y = obj["y"]
     matrix[y][x] = pos
@@ -65,6 +62,7 @@ obj = {"x":0,"y":0}
 posUpdate(plane,obj)
 while running:
   pretty(plane)
+  print("\n\n")
   plane = cleanMatrix(num)
   opt = input("WASD to move: ")
   print(opt) #debugging
