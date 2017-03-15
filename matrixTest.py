@@ -2,6 +2,9 @@
 num = 6
 
 def cleanMatrix(num):
+    '''
+    This function creates a matrix the size of num^2
+    '''
     mat=[]
     for y in range(num):
         mat.append([])
@@ -13,15 +16,22 @@ def cleanMatrix(num):
 plane = cleanMatrix(num)
 
 def pretty(matrix):
+    '''
+    This function prints a matrix in a readable format
+    :type matrix: list
+    :param matrix: plane to be displayed
+    '''
     for i in matrix:
       print(i)
 
-def xyAbstract(matrix,x,y,value):
-    newMatrix = matrix
-    matrix[y][x] = value
-    #return newMatrix
-    
 def posUpdate(matrix,obj):
+    '''
+    This function interfaces an objects coordinates with a plane
+    :type matrix: list
+    :param matrix: plane to be updated
+    :type obj: dict
+    :param obj: this object will provide coordinates for the plane
+    '''
     pos = "X"
     x = obj["x"]
     y = obj["y"]
@@ -29,6 +39,11 @@ def posUpdate(matrix,obj):
 
 
 def controlListener(val):
+    '''
+    This takes input to generate action.
+    :type val: string
+    :param val: character codes from input
+    '''
     action = ''
     if val == "w":
         action = "up"
@@ -41,6 +56,13 @@ def controlListener(val):
     return action
 
 def objAction(obj,act):
+    '''
+    This function enables objects to exectue an action
+    :type obj: dict
+    :param obj: object to append actions to
+    :type act: string
+    :param act: action for object to execute
+    '''
     xUpdate = 0
     yUpdate = 0
     if act == "up":
