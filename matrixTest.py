@@ -1,3 +1,6 @@
+#constants
+num = 6
+
 def cleanMatrix(num):
     mat=[]
     for y in range(num):
@@ -7,7 +10,7 @@ def cleanMatrix(num):
           mat[y][x] = 0
     return mat
 
-plane = cleanMatrix(6)
+plane = cleanMatrix(num)
 
 
 def pretty(matrix):
@@ -25,7 +28,7 @@ def posUpdate(matrix,obj):
     pos = "XX"
     x = obj["x"]
     y = obj["y"]
-    matrix[x][y] = pos
+    matrix[y][x] = pos
 
 
 def controlListener(val):
@@ -44,9 +47,9 @@ def objAction(obj,act):
     xUpdate = 0
     yUpdate = 0
     if act == "up":
-        yUpdate = 1
-    elif act == "down":
         yUpdate = -1
+    elif act == "down":
+        yUpdate = 1
     elif act == "left":
         xUpdate = -1
     elif act == "right":
@@ -55,14 +58,14 @@ def objAction(obj,act):
     obj["x"] += xUpdate
     obj["y"] += yUpdate
 
-'''
+
 running = True #main loop control
 obj = {"x":0,"y":0}
 #obj["preX"]
 posUpdate(plane,obj)
 while running:
   pretty(plane)
-  cleanMatrix(plane)
+  plane = cleanMatrix(num)
   opt = input("WASD to move: ")
   print(opt) #debugging
   for i in "wasd":
@@ -74,12 +77,4 @@ while running:
   opt = controlListener(opt)
   objAction(obj,opt)
   posUpdate(plane,obj)
-
-
 print("Program has ended!")
-'''
-
-
-
-
-
