@@ -1,5 +1,3 @@
-import modules.matrix as trix
-
 #constants
 globalXY = 10 #matrix size
 
