@@ -76,32 +76,3 @@ def objAction(obj,act,boundary = globalXY):
 
     obj["x"] += xUpdate
     obj["y"] += yUpdate
-
-
-'''
-def main():
-    running = True #main loop control
-    obj = {"x":0,"y":0} #create object with coordinates to work with
-    #obj["preX"]
-    plane = cleanMatrix(globalXY)
-    posUpdate(plane,obj)
-    while running:
-      pretty(plane)
-      print("\n\n")
-      plane = cleanMatrix(globalXY)
-      opt = input("WASD to move: ")
-      print(opt) #debugging
-      for i in "wasd":
-        if i == opt:
-            running = True
-            break
-        else:
-            running = False
-      opt = controlListener(opt)
-      objAction(obj,opt)
-      posUpdate(plane,obj)
-    print("Program has ended!")
-
-if __name__ == "__main__":
-    main()
-'''
