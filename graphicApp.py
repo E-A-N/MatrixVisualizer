@@ -1,11 +1,28 @@
 import modules.matrix as trix
 
-#constants
-globalXY = 10 #matrix size
+def getMatixSize():
+    result = 0
+    result = int(input("What size is the matrix squared?: "))
+    return result
 
+def getCoordinates():
+    vector = {}
+    question = 'y'
+
+    while True:
+        if question.lower() == "y":
+            vector["x"] = int(input("What is the X coordinate"))
+            vector["y"] = int(input("What is the Y coordinate"))
+        else:
+            break
+
+        question = input("Do you wish to add another set of coordinates? (y or n): ")
+    return vector
 
 def main():
     running = True #main loop control
+    globalXY = getMatixSize()
+    #obj = getCoordinates()
     obj = {"x":0,"y":0} #create object with coordinates to work with
     #obj["preX"]
     plane = trix.cleanMatrix(globalXY)

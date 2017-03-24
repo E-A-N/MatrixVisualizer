@@ -55,16 +55,18 @@ def controlListener(val):
 
 def objAction(obj,act,boundary = globalXY):
     '''
-    This function enables objects to exectue an action
+    This function transaltes coordinates to a new position in the matrix
     :type obj: dict
     :param obj: object to append actions to
     :type act: string
     :param act: action for object to execute
     '''
-    topBound = (boundary - 1) * -1
+    topBound = (boundary - 1) #* -1
     xBound = boundary - 1
     xUpdate = 0
     yUpdate = 0
+    print(topBound) #for debugging
+    print(obj["y"]) #for debuggin
     if ((act == "up") and (obj["y"] < topBound)):
         yUpdate = -1
     elif act == "down":
