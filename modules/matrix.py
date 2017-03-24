@@ -66,7 +66,7 @@ def objAction(obj,act,boundary = globalXY):
     xUpdate = 0
     yUpdate = 0
     print(topBound) #for debugging
-    print(obj["y"]) #for debuggin
+    print(obj["y"]) #for debugging
     if ((act == "up") and (obj["y"] < topBound)):
         yUpdate = -1
     elif act == "down":
