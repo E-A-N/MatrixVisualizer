@@ -40,7 +40,7 @@ def main():
         else:
             running = False
       opt = trix.controlListener(opt)
-      trix.objAction(obj,opt)
+      trix.objAction(obj,opt,globalXY)
       trix.posUpdate(plane,obj)
     print("Program has ended!")
 

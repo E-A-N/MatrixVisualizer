@@ -1,6 +1,3 @@
-#constants
-globalXY = 10 #matrix size
-
 def cleanMatrix(num):
     '''
     This function creates a matrix the size of num^2
@@ -53,7 +50,7 @@ def controlListener(val):
         action = "right"
     return action
 
-def objAction(obj,act,boundary = globalXY):
+def objAction(obj,act,boundary):
     '''
     This function transaltes coordinates to a new position in the matrix
     :type obj: dict
@@ -67,13 +64,13 @@ def objAction(obj,act,boundary = globalXY):
     yUpdate = 0
     print(topBound) #for debugging
     print(obj["y"]) #for debugging
-    if ((act == "up") and (obj["y"] < topBound)):
+    if ((act == "up") and (obj["y"] > 0)): #0 is ground level
         yUpdate = -1
-    elif act == "down":
+    elif ((act == "down") and (obj["y"] < topBound)):
         yUpdate = 1
-    elif act == "left":
+    elif ((act == "left") and (obj["x"] > 0)):
         xUpdate = -1
-    elif act == "right":
+    elif ((act == "right") and (obj["x"] < boundary - 1)):
         xUpdate = 1
 
     obj["x"] += xUpdate
