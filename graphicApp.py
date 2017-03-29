@@ -1,11 +1,17 @@
 import modules.matrix as trix
 
 def getMatixSize():
+    '''
+    This function gathers input from user to use as the size of an ideal matrix
+    '''
     result = 0
     result = int(input("What size is the matrix squared?: "))
     return result
 
 def getCoordinates():
+    '''
+    This function gathers inputs for user to create vectors/coordinates
+    '''
     vector = {}
     question = 'y'
 
