@@ -1,4 +1,6 @@
 import unittest
+import modules.geometry as geo
+import modules.matrix as trix
 
 def square(x):
     return x * x
