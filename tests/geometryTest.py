@@ -13,8 +13,8 @@ class geometryTest(unittest.TestCase):
         self.assertEqual(25,square(5),"This is not squared!")
 
     #Example for boolean
-    def testOppositeOfTrue(self):
-        self.assertTrue(True,opposite(False),"This is not the opposite!!")
+    def test_Opposite_Method_Of_False(self):
+        self.assertTrue(opposite(False),"This is not the opposite!!")
 
 
 
