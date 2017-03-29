@@ -53,6 +53,7 @@ def increaseAccuracy(slope):
 
     return zoomed
 
-slo = slope([8,2], [2,8])
-accSlo = increaseAccuracy(slo)
-print(accSlo)
+#slo = slope([8,2], [2,8])
+#print(slo)
+#accSlo = increaseAccuracy(slo)
+#print(accSlo)
