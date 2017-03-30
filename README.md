@@ -1,2 +1,2 @@
 # MatrixVisualizer
-Generate matrices/guis to simplify understanding them
+a command line matrix app for doing geometry, graphics, games, etc.
