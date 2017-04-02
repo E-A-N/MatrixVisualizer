@@ -31,11 +31,26 @@ class geometrySlopeTest(unittest.TestCase):
         slope = geo.slope([x1,y1],[x2,y2])
     '''
 
-
     def test_slope_data_type(self):
         slope = geo.slope([-4,9],[6,-5])
         slopeType = type(slope) == list
         self.assertTrue(slopeType, "This is not a list type!")
+
+    def test_absolute_value_neg99(self):
+        val = geo.abs(-99)
+        test = val > 0
+        statement = "%d is not positive ----- val > 0 is %s" % (val,test)
+        self.assertTrue(test, statement)
+
+    def test_absolute_vale_neg5(self):
+        val = geo.abs(-5)
+        self.assertEqual(5,val, "The absolute value of -5 is 5 not %d" %(val))
+
+    def test_absolute_value_7(self):
+        val = geo.abs(7)
+        test = val > 0
+        statement = "%d is not positive ----- val > 0 is %s" % (val,test)
+        self.assertTrue(test, statement)
 
 if __name__ == "__main__":
     unittest.main()
