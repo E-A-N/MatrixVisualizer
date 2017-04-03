@@ -36,6 +36,7 @@ class geometrySlopeTest(unittest.TestCase):
         slopeType = type(slope) == list
         self.assertTrue(slopeType, "This is not a list type!")
 
+    ###ABSOLUTE VALUE TESTS###
     def test_absolute_value_neg99(self):
         val = geo.abs(-99)
         test = val > 0
@@ -51,6 +52,12 @@ class geometrySlopeTest(unittest.TestCase):
         test = val > 0
         statement = "%d is not positive ----- val > 0 is %s" % (val,test)
         self.assertTrue(test, statement)
+
+    ###SIMPLIFY TESTS###
+    def test_reduce_of_8_2(self):
+        slope = geo.reduce([8,2])
+        testValue =  [4,1]
+        self.assertEqual(testValue, slope, "Incorrect value")
 
 if __name__ == "__main__":
     unittest.main()

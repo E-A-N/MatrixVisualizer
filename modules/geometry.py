@@ -25,7 +25,17 @@ def abs(num):
         val = val * -1
     return val
 
+def reduce(slope):
+    newSlope = slope
+    div0 = newSlope[0] % 2
+    div1 = newSlope[1] % 2
+    while ((div0 == 0) and (div1 == 0)):
+        newSlope[0] /= 2
+        newSlope[1] /= 2
+        div0 = newSlope[0] % 2
+        div1 = newSlope[1] % 2
 
+    return newSlope
 
 def increaseAccuracy(slope):
     '''
