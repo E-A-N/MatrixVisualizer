@@ -1,6 +1,6 @@
 import modules.matrix as trix
 
-def getMatixSize():
+def getMatrixSize():
     '''
     This function gathers input from user to use as the size of an ideal matrix
     '''
@@ -27,7 +27,7 @@ def getCoordinates():
 
 def main():
     running = True #main loop control
-    globalXY = getMatixSize()
+    globalXY = getMatrixSize()
     #obj = getCoordinates()
     obj = {"x":0,"y":0} #create object with coordinates to work with
     #obj["preX"]
