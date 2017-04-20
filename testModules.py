@@ -59,5 +59,11 @@ class geometrySlopeTest(unittest.TestCase):
         testValue =  [4,1]
         self.assertEqual(testValue, slope, "Incorrect value")
 
+    def test_reduce_of_8k_2k(self):
+        slope = geo.reduce([8000,2000])
+        testValue =  [4,1]
+        self.assertEqual(testValue, slope, "Incorrect value")
+
+
 if __name__ == "__main__":
     unittest.main()
