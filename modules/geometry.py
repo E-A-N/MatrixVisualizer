@@ -26,6 +26,10 @@ def abs(num):
     return val
 
 def reduce(slope):
+    '''
+    This function simplifys the value of a slope down to it's
+    greatest common factors
+    '''
     newSlope = slope
     div0 = newSlope[0] % 2
     div1 = newSlope[1] % 2
